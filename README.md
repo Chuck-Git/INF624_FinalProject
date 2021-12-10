@@ -26,29 +26,27 @@ Point RStudio to the location of the downloaded files
 
  Navigate to the appropriate location where the five .csv files are located.
 
-These files are now ready to be used in RStudio to recreate the multiple linear regression model.  Please note that two files are included in the GitHub documentation; “Project Code.r” is the code formatted for R and “Project Code_Text” contains the same information but is a plain text version.
+These files are now ready to be used in RStudion to recreate the multiple linear regression model.  Please note that two files are included in the GitHub documentation; "Project Code.r" is the code formatted for R and "Project Code_Text" contains the same information but is a plain text file.
+
 -------------------------------------------------------
 # Coding Steps for Creating the Prediction Model #
 
-'''**Read in the training and test files**
+**Read in the training and test files**
 
 These data do not include a header and any null value will be replaced by the "?"
 
 *Training data*
 
-bit=read.csv("bit.csv", header=F, na.strings="?")
+![DataIn](https://user-images.githubusercontent.com/95941708/145654209-d63be5d7-dda5-44e6-95a0-69b16ef2fe1d.PNG)
 
-nas=read.csv("nas.csv", header=F, na.strings="?")
-
-gld=read.csv("GoldTraing.csv", header=F, na.strings="?")
 
 *Test data*
 
-nasTest=read.csv("NASTest.csv", header=F, na.strings="?")
-
-gldTest=read.csv("GoldTest.csv", header=F, na.strings="?")
+![TestDataIn](https://user-images.githubusercontent.com/95941708/145654247-56fd987e-c838-46a8-8459-130378a7bdac.PNG)
 
 *Create the multiple linear model and store it in the variable called mrm*
+
+*Use the summary() command to identify key information*
 
 bit$V1 is the Bitcoin trainig data with the column data stored in variable "V1"
 
@@ -60,11 +58,7 @@ gld$V1 is the gold trainig data with the column data stored in variable "V1"
 
 nas$V1 and gld$V1 are the predictor variables
 
-mrm = lm(bit$V1~nas$V1+gld$V1)
-
-*Use the summary() command to identify key information*
-
-summary (mrm)
+![Model_Summary](https://user-images.githubusercontent.com/95941708/145654306-1bb8bcdb-32ac-460c-8566-d79d43c469ab.PNG)
 
 *To visualize the data relationships, create scatterplots by using the plot () command*
 
@@ -74,8 +68,6 @@ plot (mrm)
 The test data replaces the training data for both the NASDAQ Composite Index and the price of gold, the predictor variables
 The interval "confidence" is used to generate a predicted value with 95% confidence interval*
 
-predict(mrm, data.frame(nas=nasTest, gld=gldTest), interval = "confidence")'''
-
-
+![predictData](https://user-images.githubusercontent.com/95941708/145654389-82e9590e-9038-4b69-a57e-81900ae23645.PNG)
 
 -------------------------------------------------------
