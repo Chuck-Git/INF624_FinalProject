@@ -1,2 +1,5 @@
 # INF624_FinalProject
-Project data, description for INF624:Predictive Modeling
+Using Asset Prices to Predict the Price of Bitcoin
+Author: Chuck Harrington
+
+
