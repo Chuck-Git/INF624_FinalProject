@@ -7,8 +7,19 @@ Author: Chuck Harrington
 
 ### The purpose of this project is to predict the price of Bitcoin using the NASDAQ Composite index and the price of gold in order to take advantage of the volatile price of Bitcoin. ###
 -------------------------------------------------------
+
 RStudio was used to create a multiple linear regression model that used data collected on the NASDAQ Composite Index, Bitcoin and gold.  These data are used to train the multiple linear regression model with a second set of data for the predictor variables, the NASDAQ Composite Index and price of gold, to test the model’s ability to predict the price of Bitcoin.  There are 1255 data points collected for each of the three variables.  70% or 878 data points are used to train the model with the remaining 377 data points used for testing.  These data are included in the .csv files and can be used to recreate the results of the project.   
 These data points have been cleaned and match the values generated each day that the U.S. stock market is open during a five-year period from October 2016 – October 2021. 
+
+-------------------------------------------------------
+## Technologies ##
+
+This project was created with: 
+
+RStudio version 4.1.1
+
+Microsoft Excel
+
 -------------------------------------------------------
 ## Installation and Use ##
 
@@ -44,7 +55,7 @@ These data do not include a header and any null value will be replaced by the "?
 
 ![TestDataIn](https://user-images.githubusercontent.com/95941708/145654247-56fd987e-c838-46a8-8459-130378a7bdac.PNG)
 
-*Create the multiple linear model and store it in the variable called mrm*
+**Create the multiple linear model and store it in the variable called mrm**
 
 *Use the summary() command to identify key information*
 
@@ -71,3 +82,6 @@ The interval "confidence" is used to generate a predicted value with 95% confide
 ![predictData](https://user-images.githubusercontent.com/95941708/145654389-82e9590e-9038-4b69-a57e-81900ae23645.PNG)
 
 -------------------------------------------------------
+# Conclusion #
+
+While this exercise was effective, the price of Bitcoin is difficult to predict using the multiple linear regression model created.  The r-squared value of 46% indicates a low level of accuracy and with the value of Bitcoin being as volatile as it is, this model is of little use in this capacity.  
