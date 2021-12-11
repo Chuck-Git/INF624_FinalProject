@@ -40,7 +40,7 @@ Point RStudio to the location of the downloaded files
 These files are now ready to be used in RStudion to recreate the multiple linear regression model.  Please note that two files are included in the GitHub documentation; "Project Code.r" is the code formatted for R and "Project Code_Text" contains the same information but is a plain text file.
 
 -------------------------------------------------------
-# Coding Steps for Creating the Prediction Model #
+## Coding Steps for Creating the Prediction Model ##
 
 **Read in the training and test files**
 
@@ -50,37 +50,51 @@ These data do not include a header and any null value will be replaced by the "?
 
 ![DataIn](https://user-images.githubusercontent.com/95941708/145654209-d63be5d7-dda5-44e6-95a0-69b16ef2fe1d.PNG)
 
-
+```
+bit=read.csv("bit.csv",header=F,na.strings="?")
+nas=read.csv("nas.csv",header=F,na.strings="?")
+gld=read.csv("GoldTrain.csv",header=F,na.strings="?")
+```
 *Test data*
 
-![TestDataIn](https://user-images.githubusercontent.com/95941708/145654247-56fd987e-c838-46a8-8459-130378a7bdac.PNG)
+![TestIn](https://user-images.githubusercontent.com/95941708/145655567-61a3c6d7-59df-49d7-b76b-0de9ac2ee1a2.PNG)
 
+```
+nasTest=read.csv("NASTest.csv",header=F,na.strings="?")
+gldTest=read.csv("GoldTest.csv",header=F,na.strings="?")
+```
 **Create the multiple linear model and store it in the variable called mrm**
 
 *Use the summary() command to identify key information*
 
-bit$V1 is the Bitcoin trainig data with the column data stored in variable "V1"
+- bit$V1 is the Bitcoin trainig data with the column data stored in variable "V1"
 
-bit$V1 is the outcome variable
+- bit$V1 is the outcome variable
 
-nas$V1 is the NASDAQ Composite Index trainig data with the column data stored in variable "V1"
+- nas$V1 is the NASDAQ Composite Index trainig data with the column data stored in variable "V1"
 
-gld$V1 is the gold trainig data with the column data stored in variable "V1"
+- gld$V1 is the gold trainig data with the column data stored in variable "V1"
 
-nas$V1 and gld$V1 are the predictor variables
+- nas$V1 and gld$V1 are the predictor variables
 
 ![Model_Summary](https://user-images.githubusercontent.com/95941708/145654306-1bb8bcdb-32ac-460c-8566-d79d43c469ab.PNG)
+```
+mrm=lm(bit$V1~nas$V1+gld$V1)
+summary(mrm)
+```
 
 *To visualize the data relationships, create scatterplots by using the plot () command*
-
+```
 plot (mrm)
-
+```
 *Use the multiple linear regression model created (mrm) to predict the price of Bitcoin
 The test data replaces the training data for both the NASDAQ Composite Index and the price of gold, the predictor variables
 The interval "confidence" is used to generate a predicted value with 95% confidence interval*
 
 ![predictData](https://user-images.githubusercontent.com/95941708/145654389-82e9590e-9038-4b69-a57e-81900ae23645.PNG)
-
+```
+predict(mrm,data.frame(nas=nasTest, gld=gldTest),interval = "confidence")
+```
 -------------------------------------------------------
 # Conclusion #
 
