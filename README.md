@@ -16,9 +16,9 @@ These data points have been cleaned and match the values generated each day that
 
 This project was created with: 
 
-RStudio version 4.1.1
+- RStudio version 4.1.1
 
-Microsoft Excel
+- Microsoft Excel
 
 -------------------------------------------------------
 ## Installation and Use ##
@@ -31,11 +31,9 @@ Download the five .csv files from this project.
 
 In RStudio:
 
-Point RStudio to the location of the downloaded files 
-
- File -> change dir…
-
- Navigate to the appropriate location where the five .csv files are located.
+Point RStudio to the location of the downloaded files:
+- File -> change dir…
+- Navigate to the appropriate location where the five .csv files are located.
 
 These files are now ready to be used in RStudion to recreate the multiple linear regression model.  Please note that two files are included in the GitHub documentation; "Project Code.r" is the code formatted for R and "Project Code_Text" contains the same information but is a plain text file.
 
@@ -63,7 +61,9 @@ gld=read.csv("GoldTrain.csv",header=F,na.strings="?")
 nasTest=read.csv("NASTest.csv",header=F,na.strings="?")
 gldTest=read.csv("GoldTest.csv",header=F,na.strings="?")
 ```
-**Create the multiple linear model and store it in the variable called mrm**
+**Create the multiple linear model** 
+
+*Use lm() to create the model and store it in the variable called mrm*
 
 *Use the summary() command to identify key information*
 
