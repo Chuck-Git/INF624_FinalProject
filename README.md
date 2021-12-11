@@ -35,7 +35,7 @@ Point RStudio to the location of the downloaded files:
 - File -> change dir…
 - Navigate to the appropriate location where the five .csv files are located.
 
-These files are now ready to be used in RStudion to recreate the multiple linear regression model.  Please note that two files are included in the GitHub documentation; "Project Code.r" is the code formatted for R and "Project Code_Text" contains the same information but is a plain text file.
+These files are now ready to be used in RStudion to recreate the multiple linear regression model.  Please note that two files are included in the GitHub documentation; "Project Code.r" is the code formatted for R and "Project Code_TEXT" contains the same information but is a plain text file.
 
 -------------------------------------------------------
 ## Coding Steps for Creating the Prediction Model ##
